@@ -79,7 +79,7 @@ class _AccountDetailsWidgetState extends State<AccountDetailsWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
-                              '[User Name Here]',
+                              'Ayush Dhwaj Singh Dhakre',
                               style:
                                   FlutterFlowTheme.of(context).title1.override(
                                         fontFamily: 'Lexend Deca',
@@ -97,7 +97,7 @@ class _AccountDetailsWidgetState extends State<AccountDetailsWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
-                              'User.name@domainname.com',
+                              'ayushdsd@gmail.com',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
