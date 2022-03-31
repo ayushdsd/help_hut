@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import '../sub_category_cook/sub_category_cook_widget.dart';
 import '../sub_categorycleaning/sub_categorycleaning_widget.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,6 @@ class HomePage1Widget extends StatefulWidget {
 
 class _HomePage1WidgetState extends State<HomePage1Widget>
     with TickerProviderStateMixin {
-  TextEditingController searchFieldController;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'rowOnPageLoadAnimation': AnimationInfo(
       curve: Curves.easeIn,
@@ -37,6 +36,7 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
       ),
     ),
   };
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -46,8 +46,6 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
       this,
     );
-
-    searchFieldController = TextEditingController();
   }
 
   @override
@@ -58,7 +56,7 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
         backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: false,
         title: Text(
-          'Hi Alex !',
+          'Hi User!',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
@@ -66,15 +64,29 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
               ),
         ),
         actions: [
-          Container(
-            width: 50,
-            height: 50,
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-            ),
-            child: Image.network(
-              'https://picsum.photos/seed/79/600',
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+            child: InkWell(
+              onTap: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        NavBarPage(initialPage: 'Account_details'),
+                  ),
+                );
+              },
+              child: Container(
+                width: 50,
+                height: 50,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Image.network(
+                  'https://www.w3schools.com/howto/img_avatar.png',
+                ),
+              ),
             ),
           ),
         ],
@@ -86,69 +98,13 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Material(
-                  color: Colors.transparent,
-                  elevation: 3,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFE1D5C9),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xFF009688),
-                        )
-                      ],
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 8, 20, 8),
-                      child: TextFormField(
-                        controller: searchFieldController,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: 'Search for services...',
-                          hintText: 'Search by name, location etc...',
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                              width: 5,
-                            ),
-                            borderRadius: BorderRadius.circular(555),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                              width: 5,
-                            ),
-                            borderRadius: BorderRadius.circular(555),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.search_rounded,
-                            color: Colors.black,
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    'Quick Access***',
+                    'Quick Access',
                     style: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,
@@ -181,39 +137,50 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
                             color: Color(0xFFC49450),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 48,
-                                height: 48,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  shape: BoxShape.circle,
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      SubCategorycleaningWidget(),
                                 ),
-                                child: Icon(
-                                  Icons.cleaning_services_outlined,
-                                  color: Colors.white,
-                                  size: 32,
+                              );
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 48,
+                                  height: 48,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.cleaning_services_outlined,
+                                    color: Colors.white,
+                                    size: 32,
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                                child: Text(
-                                  'Cleaning',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText2
-                                      .override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 0, 0),
+                                  child: Text(
+                                    'Cleaning',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -378,7 +345,7 @@ class _HomePage1WidgetState extends State<HomePage1Widget>
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                                 child: Text(
-                                  'Running',
+                                  'Electrician',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(

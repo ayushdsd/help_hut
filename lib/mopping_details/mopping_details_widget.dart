@@ -22,7 +22,7 @@ class _MoppingDetailsWidgetState extends State<MoppingDetailsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFB48F5B),
+        backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -37,14 +37,6 @@ class _MoppingDetailsWidgetState extends State<MoppingDetailsWidget> {
           onPressed: () {
             print('IconButton pressed ...');
           },
-        ),
-        title: Text(
-          'Page Title',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
-              ),
         ),
         actions: [],
         centerTitle: true,

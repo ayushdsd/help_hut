@@ -3,7 +3,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CheckoutWidget extends StatefulWidget {
@@ -21,7 +20,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFB48F5B),
+        backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -58,7 +57,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
               width: MediaQuery.of(context).size.width,
               height: 32,
               decoration: BoxDecoration(
-                color: Color(0xFFB48F5B),
+                color: Color(0xFFC49450),
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 3,
@@ -66,35 +65,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                     offset: Offset(0, 1),
                   )
                 ],
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 8),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Order Total',
-                      style: FlutterFlowTheme.of(context).bodyText2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFB000000),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                          ),
-                    ),
-                    Text(
-                      '\$25.00',
-                      textAlign: TextAlign.end,
-                      style: FlutterFlowTheme.of(context).subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF151B1E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                    ),
-                  ],
-                ),
               ),
             ),
             Padding(
@@ -141,7 +111,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(8),
                                         child: Image.asset(
-                                          'assets/images/photoBook.png',
+                                          'assets/images/pexels-matilda-wormwood-4098778.jpg',
                                           width: 74,
                                           height: 74,
                                           fit: BoxFit.cover,
@@ -162,7 +132,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '[Product Name]',
+                                          'Full House Cleaning',
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle1
                                               .override(
@@ -175,96 +145,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 4, 0, 4),
-                                          child: Text(
-                                            'Color: Green',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF090F13),
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
                                                   0, 8, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 30,
-                                                buttonSize: 46,
-                                                icon: FaIcon(
-                                                  FontAwesomeIcons.minus,
-                                                  color: Color(0xFF95A1AC),
-                                                  size: 16,
-                                                ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
-                                                },
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(4, 0, 4, 0),
-                                                child: Container(
-                                                  width: 34,
-                                                  height: 34,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.transparent,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                    border: Border.all(
-                                                      color: Color(0xFFDBE2E7),
-                                                    ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                12, 4, 12, 0),
-                                                    child: Text(
-                                                      '1',
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .subtitle1
-                                                          .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Color(
-                                                                0xFF111417),
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 30,
-                                                buttonSize: 46,
-                                                icon: FaIcon(
-                                                  FontAwesomeIcons.plus,
-                                                  color: Color(0xFF090F13),
-                                                  size: 16,
-                                                ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
-                                                },
-                                              ),
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
@@ -278,7 +164,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         CrossAxisAlignment.end,
                                                     children: [
                                                       Text(
-                                                        '[Price]',
+                                                        'Rs 700',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -370,7 +256,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '[Price]',
+                                    'Rs 700',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .subtitle2
@@ -404,41 +290,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '[Price]',
-                                    textAlign: TextAlign.end,
-                                    style: FlutterFlowTheme.of(context)
-                                        .subtitle2
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF111417),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Shipping',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText2
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF8B97A2),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                  ),
-                                  Text(
-                                    '[Price]',
+                                    '0',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .subtitle2
@@ -472,7 +324,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '[Order Total]',
+                                    'Rs 700',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .subtitle1
@@ -497,55 +349,31 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                       endIndent: 16,
                       color: Colors.transparent,
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              'assets/images/applePay.png',
-                              width: 160,
-                              height: 44,
-                              fit: BoxFit.cover,
-                            ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                      child: FFButtonWidget(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        text: 'Proceed to Checkout',
+                        options: FFButtonOptions(
+                          width: 320,
+                          height: 60,
+                          color: Color(0xFF03CE9F),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                          elevation: 3,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
                           ),
+                          borderRadius: 8,
                         ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/payPal.png',
-                            width: 160,
-                            height: 44,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                    FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
-                      text: 'Proceed to Checkout',
-                      options: FFButtonOptions(
-                        width: 320,
-                        height: 60,
-                        color: Color(0xFF03CE9F),
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                        elevation: 3,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 8,
                       ),
                     ),
                   ],

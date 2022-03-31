@@ -1,6 +1,8 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../sign_in/sign_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -50,8 +52,8 @@ class _AccountDetailsWidgetState extends State<AccountDetailsWidget> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset(
-                                'assets/images/WhatsApp_Image_2022-03-10_at_11.19.46_AM.jpeg',
+                              child: Image.network(
+                                'https://www.w3schools.com/howto/img_avatar.png',
                               ),
                             ),
                           ),
@@ -329,8 +331,15 @@ class _AccountDetailsWidgetState extends State<AccountDetailsWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await signOut();
+                          await Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignInWidget(),
+                            ),
+                            (r) => false,
+                          );
                         },
                         text: 'Log Out',
                         options: FFButtonOptions(

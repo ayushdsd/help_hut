@@ -1,7 +1,11 @@
+import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../sub_categorycleaning/sub_categorycleaning_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -14,6 +18,7 @@ class FHCDetailsWidget extends StatefulWidget {
 }
 
 class _FHCDetailsWidgetState extends State<FHCDetailsWidget> {
+  CartProductsRecord fhc1;
   PageController pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -22,7 +27,7 @@ class _FHCDetailsWidgetState extends State<FHCDetailsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFB48F5B),
+        backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -34,8 +39,13 @@ class _FHCDetailsWidgetState extends State<FHCDetailsWidget> {
             color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SubCategorycleaningWidget(),
+              ),
+            );
           },
         ),
         actions: [],
@@ -346,8 +356,20 @@ class _FHCDetailsWidgetState extends State<FHCDetailsWidget> {
                           ],
                         ),
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            final cartProductsCreateData =
+                                createCartProductsRecordData(
+                              serviceCode: '',
+                            );
+                            var cartProductsRecordReference =
+                                CartProductsRecord.collection.doc();
+                            await cartProductsRecordReference
+                                .set(cartProductsCreateData);
+                            fhc1 = CartProductsRecord.getDocumentFromData(
+                                cartProductsCreateData,
+                                cartProductsRecordReference);
+
+                            setState(() {});
                           },
                           text: 'Add',
                           options: FFButtonOptions(

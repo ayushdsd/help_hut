@@ -1,5 +1,7 @@
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,14 +13,7 @@ class MemberListWidget extends StatefulWidget {
 }
 
 class _MemberListWidgetState extends State<MemberListWidget> {
-  TextEditingController searchFieldController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    searchFieldController = TextEditingController();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,28 +22,49 @@ class _MemberListWidgetState extends State<MemberListWidget> {
       appBar: AppBar(
         backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: true,
-        title: Text(
-          'Hi Alex!',
-          style: FlutterFlowTheme.of(context).title1.override(
-                fontFamily: 'Lexend Deca',
-                color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.black,
+            size: 30,
+          ),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NavBarPage(initialPage: 'HomePage1'),
               ),
+            );
+          },
         ),
         actions: [
           Align(
             alignment: AlignmentDirectional(1, 1),
-            child: Container(
-              width: 113,
-              height: 113,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-              child: Image.network(
-                'https://www.w3schools.com/howto/img_avatar.png',
-                fit: BoxFit.contain,
+            child: InkWell(
+              onTap: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        NavBarPage(initialPage: 'Account_details'),
+                  ),
+                );
+              },
+              child: Container(
+                width: 113,
+                height: 113,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Image.network(
+                  'https://www.w3schools.com/howto/img_avatar.png',
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),
@@ -63,57 +79,6 @@ class _MemberListWidgetState extends State<MemberListWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Material(
-                color: Colors.transparent,
-                elevation: 3,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFE1D5C9),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xFF009688),
-                      )
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 8, 20, 8),
-                    child: TextFormField(
-                      controller: searchFieldController,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Search for members...',
-                        hintText: 'Search by name, location etc...',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                            width: 5,
-                          ),
-                          borderRadius: BorderRadius.circular(555),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                            width: 5,
-                          ),
-                          borderRadius: BorderRadius.circular(555),
-                        ),
-                        prefixIcon: Icon(
-                          Icons.search_rounded,
-                          color: Colors.black,
-                        ),
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
-                  ),
-                ),
-              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 36, 16, 0),
                 child: Material(
@@ -205,7 +170,7 @@ class _MemberListWidgetState extends State<MemberListWidget> {
                     decoration: BoxDecoration(
                       color: Color(0xFF090F13),
                       image: DecorationImage(
-                        fit: BoxFit.none,
+                        fit: BoxFit.cover,
                         image: Image.asset(
                           'assets/images/cleaning_image_homepage.jpg',
                         ).image,

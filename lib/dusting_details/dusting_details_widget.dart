@@ -22,7 +22,7 @@ class _DustingDetailsWidgetState extends State<DustingDetailsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFB48F5B),
+        backgroundColor: Color(0xFFC49450),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
